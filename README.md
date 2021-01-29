@@ -1,6 +1,8 @@
 
 # vue-draggable-card
 
+![logo](logo.png "logo")
+
 ## Install
 
 ```bash
