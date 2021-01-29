@@ -1,7 +1,11 @@
 
 # vue-draggable-card
 
-![logo](logo.png "logo")
+<p align="center">
+  <a href="https://github.com/mevCJ/vue-draggable-card" target="_blank">
+<img src="https://github.com/mevCJ/vue-draggable-card/raw/main/logo.png" width="50%">
+</a>
+</p>
 
 ## Install
 
