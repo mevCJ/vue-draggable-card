@@ -1,6 +1,6 @@
 {
   "name": "vue-draggable-card",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A card that you can drag around your webpage",
   "main": "dist/vue-draggable-card.ssr.js",
   "browser": "dist/vue-draggable-card.esm.js",

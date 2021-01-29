@@ -29,7 +29,7 @@ export default {
     subtitle: String,
     text: String,
     image: String,
-    random: Boolean,
+    randomTilt: Boolean,
     randomMax: {
       type: Number,
       default: 15,
@@ -40,7 +40,7 @@ export default {
     },
   },
   mounted() {
-    if (this.random)
+    if (this.randomTilt)
       this.rotate =
         Math.floor(Math.random() * (this.randomMax - this.randomMin)) +
         this.randomMin;
@@ -83,6 +83,7 @@ export default {
         this.$refs.eCard.offsetTop - this.pos2 + "px";
       this.$refs.eCard.style.left =
         this.$refs.eCard.offsetLeft - this.pos1 + "px";
+      this.$emit('drag',e);
     },
 
     closeDragElement() {

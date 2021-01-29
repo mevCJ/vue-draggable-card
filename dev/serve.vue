@@ -1,17 +1,17 @@
 <script>
 import Vue from 'vue';
-import { DraggableCards } from '@/entry';
+import { VueDraggableCard } from '@/entry';
 
 export default Vue.extend({
   name: 'ServeDev',
   components: {
-    DraggableCards,
+    VueDraggableCard,
   }
 });
 </script>
 
 <template>
   <div id="app">
-    <DraggableCards />
+    <VueDraggableCard />
   </div>
 </template>

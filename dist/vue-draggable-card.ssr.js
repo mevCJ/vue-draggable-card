@@ -83,7 +83,7 @@ var script = {
     subtitle: String,
     text: String,
     image: String,
-    random: Boolean,
+    randomTilt: Boolean,
     randomMax: {
       type: Number,
       default: 15
@@ -94,7 +94,7 @@ var script = {
     }
   },
   mounted: function mounted() {
-    if (this.random) this.rotate = Math.floor(Math.random() * (this.randomMax - this.randomMin)) + this.randomMin;
+    if (this.randomTilt) this.rotate = Math.floor(Math.random() * (this.randomMax - this.randomMin)) + this.randomMin;
   },
   data: function data() {
     return {
@@ -133,6 +133,7 @@ var script = {
       this.$refs.eCard.style.margin = 0;
       this.$refs.eCard.style.top = this.$refs.eCard.offsetTop - this.pos2 + "px";
       this.$refs.eCard.style.left = this.$refs.eCard.offsetLeft - this.pos1 + "px";
+      this.$emit('drag', e);
     },
     closeDragElement: function closeDragElement() {
       // stop moving when mouse button is released:
@@ -296,7 +297,7 @@ var __vue_staticRenderFns__ = [];
 
 var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-31ca2ff5_0", {
+  inject("data-v-4e036967_0", {
     source: ".event-cards{transition:transform .2s ease-in-out 0s,box-shadow .2s ease-in-out!important;position:absolute!important;z-index:2;cursor:grab!important;box-shadow:5px 4px 11px 0 rgba(0,0,0,.44);-webkit-box-shadow:5px 4px 11px 0 rgba(0,0,0,.44);-moz-box-shadow:5px 4px 11px 0 rgba(0,0,0,.44);padding:4rem}.event-cards:active{box-shadow:10px 10px 26px -2px rgba(0,0,0,.4);-webkit-box-shadow:10px 10px 26px -2px rgba(0,0,0,.4);-moz-box-shadow:10px 10px 26px -2px rgba(0,0,0,.4)}.enlarge-cards{transform:scale(1.1)}",
     map: undefined,
     media: undefined
@@ -308,7 +309,7 @@ var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
 var __vue_scope_id__ = undefined;
 /* module identifier */
 
-var __vue_module_identifier__ = "data-v-31ca2ff5";
+var __vue_module_identifier__ = "data-v-4e036967";
 /* functional template */
 
 var __vue_is_functional_template__ = false;
@@ -317,7 +318,7 @@ var __vue_is_functional_template__ = false;
 var __vue_component__ = /*#__PURE__*/normalizeComponent({
   render: __vue_render__,
   staticRenderFns: __vue_staticRenderFns__
-}, __vue_inject_styles__, __vue_script__, __vue_scope_id__, __vue_is_functional_template__, __vue_module_identifier__, false, undefined, createInjectorSSR, undefined);/* eslint-disable import/prefer-default-export */var components=/*#__PURE__*/Object.freeze({__proto__:null,DraggableCards: __vue_component__});var install = function installVueDraggableCard(Vue) {
+}, __vue_inject_styles__, __vue_script__, __vue_scope_id__, __vue_is_functional_template__, __vue_module_identifier__, false, undefined, createInjectorSSR, undefined);/* eslint-disable import/prefer-default-export */var components=/*#__PURE__*/Object.freeze({__proto__:null,VueDraggableCard: __vue_component__});var install = function installVueDraggableCard(Vue) {
   if (install.installed) return;
   install.installed = true;
   Object.entries(components).forEach(function (_ref) {
@@ -350,4 +351,4 @@ var plugin = {
     GlobalVue.use(plugin);
   }
 } // Default export is library as a whole, registered via Vue.use()
-exports.DraggableCards=__vue_component__;exports.default=plugin;
+exports.VueDraggableCard=__vue_component__;exports.default=plugin;

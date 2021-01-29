@@ -29,7 +29,7 @@ var script = {
     subtitle: String,
     text: String,
     image: String,
-    random: Boolean,
+    randomTilt: Boolean,
     randomMax: {
       type: Number,
       default: 15
@@ -41,7 +41,7 @@ var script = {
   },
 
   mounted() {
-    if (this.random) this.rotate = Math.floor(Math.random() * (this.randomMax - this.randomMin)) + this.randomMin;
+    if (this.randomTilt) this.rotate = Math.floor(Math.random() * (this.randomMax - this.randomMin)) + this.randomMin;
   },
 
   data: () => ({
@@ -80,6 +80,7 @@ var script = {
       this.$refs.eCard.style.margin = 0;
       this.$refs.eCard.style.top = this.$refs.eCard.offsetTop - this.pos2 + "px";
       this.$refs.eCard.style.left = this.$refs.eCard.offsetLeft - this.pos1 + "px";
+      this.$emit('drag', e);
     },
 
     closeDragElement() {
@@ -262,7 +263,7 @@ var __vue_staticRenderFns__ = [];
 
 const __vue_inject_styles__ = function (inject) {
   if (!inject) return;
-  inject("data-v-31ca2ff5_0", {
+  inject("data-v-4e036967_0", {
     source: ".event-cards{transition:transform .2s ease-in-out 0s,box-shadow .2s ease-in-out!important;position:absolute!important;z-index:2;cursor:grab!important;box-shadow:5px 4px 11px 0 rgba(0,0,0,.44);-webkit-box-shadow:5px 4px 11px 0 rgba(0,0,0,.44);-moz-box-shadow:5px 4px 11px 0 rgba(0,0,0,.44);padding:4rem}.event-cards:active{box-shadow:10px 10px 26px -2px rgba(0,0,0,.4);-webkit-box-shadow:10px 10px 26px -2px rgba(0,0,0,.4);-moz-box-shadow:10px 10px 26px -2px rgba(0,0,0,.4)}.enlarge-cards{transform:scale(1.1)}",
     map: undefined,
     media: undefined
@@ -291,7 +292,7 @@ const __vue_component__ = /*#__PURE__*/normalizeComponent({
 
 var components = /*#__PURE__*/Object.freeze({
   __proto__: null,
-  DraggableCards: __vue_component__
+  VueDraggableCard: __vue_component__
 });
 
 // Import vue components
@@ -310,4 +311,4 @@ const plugin = {
 }; // To auto-install on non-es builds, when vue is found
 
 export default plugin;
-export { __vue_component__ as DraggableCards };
+export { __vue_component__ as VueDraggableCard };
